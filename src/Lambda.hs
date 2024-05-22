@@ -1,4 +1,4 @@
-module Lambda.Lambda where
+module Lambda where
 
 import Data.Set
 import Relude

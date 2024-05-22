@@ -19,14 +19,26 @@ common common
         base ^>=4.17.2.0,
         relude ^>=1.2.1.0,
 
-library
+library lambda-lib
     import: common
+    hs-source-dirs: src
     build-depends:
         containers ^>=0.6.0,
-    exposed-modules:
-        Lambda.Lambda
+    exposed-modules: Lambda
 
 executable lambda
     import: common
+    hs-source-dirs: app
     main-is: lambda.hs
-    other-modules: Lambda.Lambda
+    build-depends: lambda-lib
+    other-modules: Lambda
+
+test-suite lambda-test
+    import: common
+    type: exitcode-stdio-1.0
+    hs-source-dirs: test
+    main-is: lambda.hs
+    build-depends:
+        lambda-lib,
+        hspec ^>=2.10.0,
+    -- other-modules: Lambda.Lambda
