@@ -1,0 +1,24 @@
+cabal-version: 3.0
+name: lambda
+version: 0.1.0.0
+homepage: https://codeberg.org/eownerdead/lambda-hs
+license: 0BSD
+license-file: LICENSE.md
+author: EOWNERDEAD
+maintainer: eownerdead@disroot.org
+copyright: EOWNERDEAD
+build-type: Simple
+
+common common
+    default-language: GHC2021
+    default-extensions: NoImplicitPrelude
+    ghc-options: -Wall
+    build-depends:
+        base ^>=4.17.2.0,
+        relude ^>=1.2.1.0,
+
+executable lambda
+    import: common
+    main-is: lambda.hs
+    build-depends:
+        containers ^>=0.6.0,
