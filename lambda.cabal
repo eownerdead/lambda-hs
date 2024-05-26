@@ -23,6 +23,7 @@ library lambda-lib
     import: common
     hs-source-dirs: src
     build-depends:
+        mtl ^>=2.2.0,
         containers ^>=0.6.0,
     exposed-modules: Lambda
 
@@ -31,7 +32,7 @@ executable lambda
     hs-source-dirs: app
     main-is: lambda.hs
     build-depends: lambda-lib
-    other-modules: Lambda
+    --other-modules: Lambda
 
 test-suite lambda-test
     import: common
